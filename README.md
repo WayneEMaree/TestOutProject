@@ -4,7 +4,7 @@
 
 #### 2. 'npm run build' to build the project
 
-#### 3. 'npm start' to generate a server to display the app on localhost:8080/ <DEPRECATED>
+#### 3. 'npm start' to generate a server to display the app on localhost:8080/ *Deprecated as it removes dist directory on launch.*
 
 Any changes to config files require a rebuild.
 Dist directory is cleaned on build. 
