@@ -5,13 +5,18 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: {
-    app: "./src/index.js",
-    print: "./src/print.js",
+    app: "./src/index.ts",
+    print: "./src/print.js"
+  },
+  resolve: {
+    extensions: ["webpack.js", ".web.js", ".ts", ".tsx", ".js"]
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Output Management'
+      title: "No",
+      template: "./src/common/html/index.html",
+      filename: "index.html"
     })
   ],
   output: {
@@ -20,6 +25,10 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader'
+      },
       {
         test: /\.css$/,
         use: [
@@ -32,10 +41,18 @@ module.exports = {
          use: [
            'file-loader'
          ]
+      },
+      {
+        test: /\.(html)$/,
+        exclude: [/node_modules/, 'index.html'],
+        use: { 
+          loader: 'html-loader',
+          options: {
+            attrs: [':data-src'],
+            exportAsEs6Default: true
+          }
+        }
       }
     ]
-  },
-  devServer: {
-    contentBase: path.resolve(__dirname, "dist")
   }
 };

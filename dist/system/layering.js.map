@@ -1,1 +1,0 @@
-{"version":3,"file":"layering.js","sourceRoot":"","sources":["../../Application/src/system/layering.ts"],"names":[],"mappings":"AAAA,IAAI,QAAQ,GAAG,CAAC;IACZ,IAAI,UAAU,GAAG,EAAE,CAAC;IAEpB;IAEA,CAAC;IAED,sBAAsB,WAAmB,EAAE,gBAAwB;IAEnE,CAAC;IAED,OAAO;QACH,YAAY,EAAE,YAAY;QAC1B,IAAI,EAAE,IAAI;KACb,CAAA;AAEL,CAAC,CAAC,EAAE,CAAC;AAEL,QAAQ,CAAC,IAAI,EAAE,CAAC"}

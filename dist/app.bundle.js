@@ -66,7 +66,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.ts");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -78,7 +78,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \".hello {\\n  color: red;\\n}\\n\\nbody {\\n  background: black;\\n}\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/style.css?./node_modules/css-loader");
+eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \".hello {\\n  color: red;\\n}\\n\\nbody {\\n  background-color: rgba(200,20,100, 0.2);\\n  margin: 0;\\n  padding: 25px;\\n  display: block;\\n  height: 100%;\\n  width: 100%;\\n  z-index: -999;\\n}\\n\\n.container {\\n  height: 300px;\\n  width: 500px;\\n  position: absolute;\\n  top: calc(50% - 150px);\\n  left: calc(50% - 250px);\\n  background-color: rgba(0,0,0,0.3);\\n  border-radius: 5px;\\n  overflow: hidden;\\n}\\n\\n.topBar {\\n  display: block;\\n  background-color: rgba(0,0,0, 0.7);\\n  height: 35px;\\n  width: 100%;\\n  position: absolute;\\n  top: 0;\\n  left: 0;\\n  cursor: pointer;\\n}\\n\\n.topBar:hover {\\n  cursor: grab;\\n}\\n\\n.topBarButton {\\n  color: white;\\n  float: right;\\n  display: inline-block;\\n  height: 35px;\\n  width: 35px;\\n  background-color: rgba(0,0,0,0.3);\\n  border: none;\\n  margin: 0px;\\n  padding: 12px;\\n  line-height: 0px;\\n  font-size: 20px;\\n  text-align: center;\\n}\\n\\n.topBarButton:hover {\\n  cursor: pointer;\\n  color: rgba(200, 0, 180, 1);\\n  background-color: rgba(40,0,40,0.8);\\n}\\n\\n.topBarButton:active {\\n  border: none;\\n}\\n\\n.maneuverElem {\\n  z-index: 2;\\n  cursor: pointer;\\n  position: relative;\\n  width: calc(100% - 105px);\\n  height: 35px;\\n}\\n\\n.maneuverElem:active {\\n  cursor: grab;\\n}\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/style.css?./node_modules/css-loader");
 
 /***/ }),
 
@@ -148,15 +148,63 @@ eval("module.exports = function(module) {\n\tif (!module.webpackPolyfill) {\n\t\
 
 /***/ }),
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/*! no exports provided */
+/***/ "./src/common/html/windowWrapper.html":
+/*!********************************************!*\
+  !*** ./src/common/html/windowWrapper.html ***!
+  \********************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _print_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./print.js */ \"./src/print.js\");\n\n\n\n\nfunction component() {\n  var element = document.createElement('div');\n  var btn = document.createElement('button');\n\n  // Lodash now implemented\n  element.classList.add('hello');\n  element.innerHTML = lodash__WEBPACK_IMPORTED_MODULE_0___default.a.join(['Hello', 'ballz'], ' ');\n  \n  btn.innerHTML = 'Click me and check the console!';\n  btn.onclick = _print_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"];\n\n  element.appendChild(btn);\n  return element;\n}\n\ndocument.body.appendChild(component());\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"<div class=\\\"appContainer\\\">\\n  <div class=\\\"topBar\\\">\\n    <button class=\\\"topBarButton\\\"> x </button>\\n    <button class=\\\"topBarButton\\\"> + </button>\\n    <button class=\\\"topBarButton\\\"> - </button>\\n  </div>\\n  <div class=\\\"content\\\">\\n    \\n  </div>\\n</div>    \\n  \");\n\n//# sourceURL=webpack:///./src/common/html/windowWrapper.html?");
+
+/***/ }),
+
+/***/ "./src/common/ts/appRunner.ts":
+/*!************************************!*\
+  !*** ./src/common/ts/appRunner.ts ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar windowWrapper_html_1 = __importDefault(__webpack_require__(/*! ../html/windowWrapper.html */ \"./src/common/html/windowWrapper.html\"));\nvar moduleWindow_1 = __webpack_require__(/*! ./moduleWindow */ \"./src/common/ts/moduleWindow.ts\");\nvar appRunner = /** @class */ (function () {\n    function appRunner() {\n        this.allApps = [];\n        console.log('runner hit');\n        var testModal = new moduleWindow_1.moduleWindow('intialTest', null);\n        this.allApps.push(moduleWindow_1.moduleWindow);\n    }\n    appRunner.prototype.displayApps = function () {\n        var wayne_dos10 = document.getElementById('operatingSystem');\n        var i = 0;\n        while (i < this.allApps.length) {\n            var existingHtml = wayne_dos10.innerHTML;\n            wayne_dos10.innerHTML = existingHtml + windowWrapper_html_1.default;\n            i += 1;\n        }\n    };\n    appRunner.prototype.getApp = function (modalId) {\n        var i = 0;\n        while (i < this.allApps.length) {\n            if (this.allApps[i].element.id = modalId) {\n                return this.allApps[i];\n            }\n            i += 1;\n        }\n    };\n    return appRunner;\n}());\nexports.appRunner = appRunner;\n;\n\n\n//# sourceURL=webpack:///./src/common/ts/appRunner.ts?");
+
+/***/ }),
+
+/***/ "./src/common/ts/modularFunctions.ts":
+/*!*******************************************!*\
+  !*** ./src/common/ts/modularFunctions.ts ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar modularFunctions = /** @class */ (function () {\n    function modularFunctions() {\n        this.layerStore = [];\n        this.target = '';\n        this.grabbedY = -1;\n        this.grabbedX = -1;\n        this.isMouseDown = false;\n    }\n    modularFunctions.prototype.init = function () {\n    };\n    modularFunctions.prototype.minimize = function (element) {\n    };\n    modularFunctions.prototype.maximize = function (element) {\n    };\n    modularFunctions.prototype.close = function (element) {\n    };\n    /**\n        element data and elements will use a shared class, element, metadata respectively\n     probably only going to need the elementData section to do everything. Make a lookup table?\n     */\n    modularFunctions.prototype.repositionElement = function (event) {\n        console.log('reposition hit', this.target);\n        console.log('f', this.isMouseDown);\n        if (this.target !== '') {\n            var elementToMove = document.getElementById(this.target);\n            var elementStyle = elementToMove.getBoundingClientRect();\n            var currentElemHeight = elementToMove.offsetHeight;\n            var currentElemWidth = elementToMove.offsetWidth;\n            console.log('height ', currentElemHeight);\n            console.log('width ', currentElemWidth);\n            console.log(elementStyle.left);\n            console.log('event y ', event.clientX);\n            console.log('event x ', event.clientY);\n            console.log(elementStyle.top);\n            var currentY = elementStyle.top;\n            var currentX = elementStyle.left;\n            console.log('grabbedy', this.grabbedY);\n            console.log('grabbedx', this.grabbedX);\n            if (this.isMouseDown && this.grabbedY > 0) {\n                //let yLocation = 200 - (currentElemHeight/2);\n                var yLocation = event.clientY - (currentY - this.grabbedY);\n                var xLocation = event.clientX - (currentX - this.grabbedX);\n                console.log('y: ', yLocation);\n                console.log('x: ', xLocation);\n                //let xLocation = 200 - (currentElemWidth/2);\n                elementToMove.style[\"top\"] = yLocation + 'px';\n                elementToMove.style[\"left\"] = xLocation + 'px';\n            }\n        }\n    };\n    modularFunctions.prototype.startMovement = function (elementId, event) {\n        this.isMouseDown = true;\n        this.target = elementId;\n        console.log('click location ', event.clientY);\n        this.grabbedY = event.clientY;\n        this.grabbedX = event.clientX;\n    };\n    modularFunctions.prototype.stopMovement = function () {\n        this.isMouseDown = false;\n        this.target = '';\n    };\n    return modularFunctions;\n}());\nexports.modularFunctions = modularFunctions;\n;\n\n\n//# sourceURL=webpack:///./src/common/ts/modularFunctions.ts?");
+
+/***/ }),
+
+/***/ "./src/common/ts/moduleWindow.ts":
+/*!***************************************!*\
+  !*** ./src/common/ts/moduleWindow.ts ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar windowWrapper_html_1 = __importDefault(__webpack_require__(/*! ../html/windowWrapper.html */ \"./src/common/html/windowWrapper.html\"));\nvar modularFunctions_1 = __webpack_require__(/*! ./modularFunctions */ \"./src/common/ts/modularFunctions.ts\");\nvar moduleWindow = /** @class */ (function () {\n    function moduleWindow(modalId, IElem) {\n        var _this = this;\n        this.moduleFunc = new modularFunctions_1.modularFunctions();\n        var resizeElem = document.createElement('button');\n        var resizeId = modalId + 'Resize';\n        resizeElem.classList.add('maneuverElem');\n        resizeElem.id = resizeId;\n        /*\n        resizeElem.onclick = function() {\n          console.log('this is so fucking simple yet this piece of shit framework can\\'t do it');\n        };*/\n        // this.useGenericWindowFunctionMove(null);\n        /*\n        resizeElem.addEventListener(\n          \"onclick\", (e:MouseEvent) => {\n            console.log('hmmm');\n            this.useGenericWindowFunctionMove(e)\n          });\n        resizeElem.addEventListener(\n          \"onmouseup\", (e:MouseEvent) => this.useGenericWindowFunctionStop(e));\n          */\n        if (IElem !== null) {\n            this.element = IElem.element;\n            this.element.appendChild(resizeElem);\n            this.element.innerHTML = this.element.innerHTML + IElem.element.innerHTML;\n            this.element.id = IElem.element.id;\n        }\n        else {\n            this.element = document.createElement('div');\n            this.element.classList.add('container');\n            this.element.appendChild(resizeElem);\n            this.element.innerHTML = this.element.innerHTML + windowWrapper_html_1.default;\n            this.element.id = modalId;\n        }\n        document.body.appendChild(this.element);\n        document.getElementById(resizeId).addEventListener('mousedown', function (e) {\n            console.log(e);\n            _this.useGenericWindowFunctionStart(e);\n        });\n        document.getElementById(resizeId).addEventListener('mouseup', function (e) {\n            _this.useGenericWindowFunctionStop(e);\n        });\n        document.getElementById(resizeId).addEventListener('mousemove', function (e) {\n            _this.useGenericWindowFunctionMove(e);\n        });\n    }\n    moduleWindow.prototype.getMetaData = function () {\n        return this.element.id;\n    };\n    moduleWindow.prototype.useGenericWindowFunctionMove = function (event) {\n        this.moduleFunc.repositionElement(event);\n    };\n    moduleWindow.prototype.useGenericWindowFunctionStart = function (event) {\n        this.moduleFunc.startMovement(this.element.id, event);\n    };\n    moduleWindow.prototype.useGenericWindowFunctionStop = function (event) {\n        this.moduleFunc.stopMovement();\n    };\n    return moduleWindow;\n}());\nexports.moduleWindow = moduleWindow;\n;\nObject.defineProperty(moduleWindow, 'modalId', {\n    get: function () {\n        return this.element.id;\n    },\n    set: function (modalId) {\n        this.element.id = modalId;\n    },\n});\n\n\n//# sourceURL=webpack:///./src/common/ts/moduleWindow.ts?");
+
+/***/ }),
+
+/***/ "./src/index.ts":
+/*!**********************!*\
+  !*** ./src/index.ts ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar world = '🗺️';\nfunction hello(word) {\n    if (word === void 0) { word = world; }\n    return \"Hello \" + world + \"! \";\n}\nexports.hello = hello;\nvar lodash_1 = __importDefault(__webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\"));\n__webpack_require__(/*! ./style.css */ \"./src/style.css\");\nvar print_js_1 = __importDefault(__webpack_require__(/*! ./print.js */ \"./src/print.js\"));\nvar appRunner_1 = __webpack_require__(/*! ./common/ts/appRunner */ \"./src/common/ts/appRunner.ts\");\nfunction component() {\n    var element = document.createElement('div');\n    var btn = document.createElement('button');\n    // Lodash now implemented\n    element.classList.add('hello');\n    element.innerHTML = lodash_1.default.join(['Hello', 'ballz'], ' ');\n    btn.innerHTML = 'Click me and check the console!';\n    btn.onclick = print_js_1.default;\n    element.appendChild(btn);\n    new appRunner_1.appRunner();\n    return element;\n}\ndocument.body.appendChild(component());\n\n\n//# sourceURL=webpack:///./src/index.ts?");
 
 /***/ }),
 
