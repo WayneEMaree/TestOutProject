@@ -16,14 +16,14 @@ function component() {
 
   // Lodash now implemented
   element.classList.add('hello');
-  element.innerHTML = _.join(['Hello', 'ballz'], ' ');
+  element.innerHTML = _.join(['Hello', 'Mate'], ' ');
   
   btn.innerHTML = 'Click me and check the console!';
   btn.onclick = printMe;
 
   element.appendChild(btn);
   
-  new appRunner();
+  new appRunner('initialTest');
   
   return element;
 }
